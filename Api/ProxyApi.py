@@ -122,8 +122,7 @@ def runFlaskWithGunicorn():
 
 
 if __name__ == '__main__':
-    # if platform.system() == "Windows":
-    #     runFlask()
-    # else:
-    #     runFlaskWithGunicorn()
-    runFlask()
+    if platform.system() == "Windows":
+        runFlask()
+    else:
+        runFlaskWithGunicorn()

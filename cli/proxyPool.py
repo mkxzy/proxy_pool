@@ -39,7 +39,7 @@ def schedule():
 
 
 @cli.command(name="webserver")
-def schedule():
+def webserver():
     """ 启动web服务 """
     click.echo(HEADER)
     if platform.system() == "Windows":
