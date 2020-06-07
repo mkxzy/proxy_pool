@@ -3,6 +3,7 @@ version: '3.5'
 services:
   proxy_pool:
     build: .
+    image: proxy_tool:2.0.1
     ports:
       - "5010:5010"
     networks:
