@@ -15,6 +15,7 @@ __author__ = 'JHao'
 import sys
 import click
 import platform
+from multiprocessing import Process
 
 sys.path.append('../')
 
@@ -52,7 +53,7 @@ CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
 if __name__ == '__main__':
     # cli()
-    runScheduler()
+    Process(target=runScheduler).start()
     if platform.system() == "Windows":
         runFlask()
     else:
