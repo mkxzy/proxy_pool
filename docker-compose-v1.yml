@@ -1,21 +1,14 @@
-version: '3.5'
-
+version: '2'
 services:
   proxy_pool:
     build: .
     ports:
       - "5010:5010"
-    networks:
-      - proxy_tool
+    links:
+      - proxy_redis
     environment:
-      db_type: REDIS
+      db_type: SSDB
       ssdb_host: proxy_redis
       ssdb_port: 6379
   proxy_redis:
     image: "redis"
-    networks:
-      - proxy_tool
-
-  networks:
-    proxy_tool:
-      name: proxy_tool
